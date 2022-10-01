@@ -2,20 +2,20 @@
   "name": "goit-js-hw-08",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://goitacademy.github.io/index.html",
+  "homepage": "https://github.com/yuriiavr/goit-js-hw-09/index.html",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-08/"
+    "build": "parcel build src/*.html --public-url /goit-js-hw-09/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://https://github.com/yuriiavr/goit-js-hw-08"
+    "url": "git+https://https://github.com/yuriiavr/goit-js-hw-09"
   },
   "keywords": [],
   "author": "Yurii Avramets <yurii.avramets@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/yuriiavr/goit-js-hw-08/issues"
+    "url": "https://github.com/yuriiavr/goit-js-hw-09/issues"
   },
   "dependencies": {
     "@vimeo/player": "^2.17.1",
