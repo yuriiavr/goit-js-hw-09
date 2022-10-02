@@ -13,17 +13,15 @@ refs.form.addEventListener('submit', onFormSubmit);
 function onFormSubmit(evt) { 
   evt.preventDefault();
 
-  const firstDelayValue = Number(refs.firstDelay.value);
+  let delay = Number(refs.firstDelay.value);
   const delayStepValue = Number(refs.delayStep.value);
   const amountValue = Number(refs.amount.value);
 
-  let delay = firstDelayValue - delayStepValue;
-
   for (let i = 1; i <= amountValue; i += 1) {
-    delay += delayStepValue;
     createPromise(i, delay)
-      .then(({ position, delay }) => { onFulfilled({ position, delay }) })
-      .catch(({ position, delay }) => { onRejected({ position, delay }) });
+      .then(onFulfilled)
+      .catch(onRejected)
+      delay += delayStepValue;
  }
 };
 

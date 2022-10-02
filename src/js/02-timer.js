@@ -20,7 +20,7 @@ const options = {
   },
 };
 
-const dateNow = new Date();
+let dateNow = new Date();
 const date = flatpickr('#datetime-picker', options);
 
 let intervalId = null;
@@ -48,9 +48,11 @@ function startCount(dateMs){
   intervalId = setInterval(() => {
     const deltaMs = dateMs - Date.now();
     const afterConvertMs = convertMs(deltaMs);
+    if (deltaMs <= 1000){
+      this.stopTimer()
+    }
     console.log(afterConvertMs);
     updateClockFace(afterConvertMs);
-
   }, 1000)
   changeBtn(true, true);
 }
@@ -60,10 +62,11 @@ function onInputCheck() {
     let dateMs = date.selectedDates[0].getTime();
     let dateNowMs = dateNow.getTime();
 
-    if (dateMs < dateNowMs) {
+    if (dateMs <= dateNowMs) {
       Notiflix.Notify.failure("Please choose a date in the future");
         changeBtn(false,true);
-    } else {
+    } 
+    else {
         changeBtn(false,false);
     }
 }
